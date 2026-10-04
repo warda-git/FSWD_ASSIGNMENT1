@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnecFriend | Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{min-height:100vh;background:#f7f5f6;font-family:Arial,sans-serif;color:#2f2b30}
+    .login-card{max-width:920px;border:0;border-radius:24px;overflow:hidden;box-shadow:0 18px 45px rgba(55,45,55,.12)}
+    .brand-side{background:linear-gradient(145deg,#6d4c63,#9b6f82);color:#fff;padding:55px 45px}
+    .form-side{background:#fff;padding:55px 45px}
+    .brand-logo{width:62px;height:62px;border-radius:18px;background:#fff;color:#6d4c63;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+    .btn-main{background:#7b566f;color:#fff;border:0;border-radius:12px;padding:11px}
+    .btn-main:hover{background:#68485e;color:#fff}
+    .form-control{border-radius:12px;padding:12px 14px;border:1px solid #ded8dc}
+    .soft-text{color:#777078}
+  </style>
+</head>
+<body class="d-flex align-items-center justify-content-center p-3">
+  <div class="card login-card w-100">
+    <div class="row g-0">
+      <div class="col-md-5 brand-side d-flex flex-column justify-content-center">
+        <div class="brand-logo mb-4">CF</div>
+        <h1 class="fw-bold">ConnecFriend</h1>
+        <p class="mb-4">A simple place to stay connected, share updates and keep conversations together.</p>
+        <div class="p-3 rounded-4" style="background:rgba(255,255,255,.12)">
+          <small>Connect. Share. Keep in touch.</small>
+        </div>
+      </div>
+      <div class="col-md-7 form-side">
+        <h2 class="fw-bold mb-2">Welcome back</h2>
+        <p class="soft-text mb-4">Sign in to continue to ConnecFriend.</p>
+        <div id="loginAlert"></div>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input id="username" type="text" class="form-control" placeholder="Enter your username">
+        </div>
+        <div class="mb-4">
+          <label class="form-label">Password</label>
+          <input id="password" type="password" class="form-control" placeholder="Enter your password">
+        </div>
+        <button onclick="loginUser()" class="btn btn-main w-100">Sign In</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

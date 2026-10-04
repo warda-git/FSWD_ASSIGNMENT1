@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnecFriend | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{background:#f7f5f6;font-family:Arial,sans-serif;color:#2f2b30}
+    .topbar{background:#ffffff;border-bottom:1px solid #e8e2e5;position:sticky;top:0;z-index:1000}
+    .brand{color:#6d4c63;font-weight:800;font-size:1.3rem}
+    .brand-mark{background:#6d4c63;color:#fff;border-radius:10px;padding:6px 9px;font-size:.8rem;margin-right:7px}
+    .nav-link{color:#665e65!important;border-radius:10px;padding:8px 12px!important}
+    .nav-link:hover,.nav-link.active{background:#efe8ec;color:#6d4c63!important}
+    .hero{background:linear-gradient(135deg,#6d4c63,#9b6f82);color:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(80,55,75,.12)}
+    .hero-note{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:14px}
+    .soft-card{border:1px solid #ece7e9;border-radius:18px;box-shadow:0 7px 20px rgba(70,45,65,.06)}
+    .avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+    .mini-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+    .avatar-green{background:#2f6f5b}.avatar-blue{background:#466a8a}.avatar-plum{background:#7a596d}.avatar-brown{background:#8a6749}.avatar-rose{background:#a05f67}
+    .btn-main{background:#7b566f;color:#fff;border:0;border-radius:10px}
+    .btn-main:hover{background:#68485e;color:#fff}
+    .btn-soft{background:#eee7eb;color:#6d4c63;border:0;border-radius:10px}
+    .btn-soft:hover{background:#e3d8de;color:#5b4053}
+    .feed-card{border-left:4px solid #9b6f82}
+    .rating-btn{border:1px solid #ddd5d9;background:#fff;border-radius:9px}
+    .rating-btn:hover{background:#f1ecef}
+    textarea.form-control,.form-select,.form-control{border-radius:11px;border-color:#ded8dc}
+    .section-title{font-size:1rem;font-weight:700}
+    .online-dot{width:9px;height:9px;background:#27a36a;border-radius:50%;display:inline-block;margin-right:5px}
+    .tag{background:#f4eff2;border:1px solid #e5dce1;border-radius:999px;padding:5px 9px;font-size:.78rem;color:#68485e}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg topbar py-3">
+  <div class="container">
+    <a class="navbar-brand brand" href="home.html"><span class="brand-mark">CF</span>ConnecFriend</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <div class="navbar-nav ms-auto gap-2">
+        <a class="nav-link active" href="home.html">Home</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="nav-link" href="messages.html">Messages</a>
+        <a class="nav-link" href="index.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <section class="hero p-4 p-md-5 mb-4">
+    <div class="row align-items-center g-4">
+      <div class="col-md-8">
+        <p class="mb-1 opacity-75">Assalam-o-Alaikum,</p>
+        <h2 class="fw-bold mb-2">Warda</h2>
+        <p class="mb-3">Here is what is happening in your circle today. Share an update, check recent activity, or message a friend.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="tag bg-white text-dark">Islamabad Circle</span>
+          <span class="tag bg-white text-dark">Campus Network</span>
+          <span class="tag bg-white text-dark">5 Friends Online</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hero-note p-3">
+          <small class="opacity-75">Today on ConnecFriend</small>
+          <div class="fw-bold mt-1">3 new updates</div>
+          <div class="small mt-1"><span class="online-dot"></span>Hira and Daniyal are online now</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card soft-card p-4 mb-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="avatar avatar-plum">W</div>
+          <div>
+            <h5 class="fw-bold mb-0">Share something with your circle</h5>
+            <small class="text-secondary">Share a class update, event, plan or anything you want your friends to see.</small>
+          </div>
+        </div>
+        <textarea id="newsText" class="form-control" rows="3" placeholder="What's happening today?"></textarea>
+        <div class="row g-2 mt-2">
+          <div class="col-md-6">
+            <select id="shareMode" class="form-select" onchange="toggleFriendSelection()">
+              <option value="all">Share with all friends</option>
+              <option value="selected">Share with selected friends</option>
+            </select>
+          </div>
+          <div class="col-md-6 d-grid">
+            <button onclick="shareNews()" class="btn btn-main">Share Update</button>
+          </div>
+        </div>
+        <div id="friendSelection" class="mt-3 d-none">
+          <label class="me-3"><input class="form-check-input me-1" type="checkbox"> Hira</label>
+          <label class="me-3"><input class="form-check-input me-1" type="checkbox"> Mahnoor</label>
+          <label><input class="form-check-input me-1" type="checkbox"> Daniyal</label>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold mb-0">Friends' Updates</h5>
+        <small class="text-secondary">Latest login first</small>
+      </div>
+
+      <div id="feedContainer">
+        <div class="card soft-card feed-card p-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="avatar avatar-rose">HN</div>
+            <div>
+              <h6 class="mb-0 fw-bold">Hira Noor</h6>
+              <small class="text-secondary">Logged in 8 minutes ago · Islamabad</small>
+            </div>
+          </div>
+          <p class="mt-3 mb-3">Finally submitted the UI part of our web assignment. Ab sirf viva ki tayari reh gayi 😭</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'like')">Like <span>12</span></button>
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'dislike')">Dislike <span>1</span></button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Hira Noor','Stupid')">😵 Stupid</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Hira Noor','Cool')">😎 Cool</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Hira Noor','Trustworthy')">🤝 Trustworthy</button>
+            <a href="messages.html" class="btn btn-light btn-sm ms-auto">Message</a>
+          </div>
+        </div>
+
+        <div class="card soft-card feed-card p-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="avatar avatar-blue">DK</div>
+            <div>
+              <h6 class="mb-0 fw-bold">Daniyal Khan</h6>
+              <small class="text-secondary">Logged in 21 minutes ago · Rawalpindi</small>
+            </div>
+          </div>
+          <p class="mt-3 mb-3">Anyone up for chai after class? I need a break after debugging JavaScript for two hours.</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'like')">Like <span>7</span></button>
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'dislike')">Dislike <span>0</span></button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Daniyal Khan','Stupid')">😵 Stupid</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Daniyal Khan','Cool')">😎 Cool</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Daniyal Khan','Trustworthy')">🤝 Trustworthy</button>
+            <a href="messages.html" class="btn btn-light btn-sm ms-auto">Message</a>
+          </div>
+        </div>
+
+        <div class="card soft-card feed-card p-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="avatar avatar-green">MA</div>
+            <div>
+              <h6 class="mb-0 fw-bold">Mahnoor Ali</h6>
+              <small class="text-secondary">Logged in 40 minutes ago · Islamabad</small>
+            </div>
+          </div>
+          <p class="mt-3 mb-3">Library was surprisingly peaceful today. Got more work done in one hour than the whole weekend.</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'like')">Like <span>15</span></button>
+            <button class="btn btn-soft btn-sm" onclick="reactPost(this,'dislike')">Dislike <span>2</span></button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Mahnoor Ali','Stupid')">😵 Stupid</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Mahnoor Ali','Cool')">😎 Cool</button>
+            <button class="btn rating-btn btn-sm" onclick="rateFriend('Mahnoor Ali','Trustworthy')">🤝 Trustworthy</button>
+            <a href="messages.html" class="btn btn-light btn-sm ms-auto">Message</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card soft-card p-4 mb-4">
+        <h5 class="section-title">Recent Logins</h5>
+        <p class="small text-secondary">Friends are ordered by latest login.</p>
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="mini-avatar avatar-rose">HN</div>
+          <div><strong>Hira Noor</strong><br><small class="text-secondary"><span class="online-dot"></span>8 min ago</small></div>
+        </div>
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="mini-avatar avatar-blue">DK</div>
+          <div><strong>Daniyal Khan</strong><br><small class="text-secondary">21 min ago</small></div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="mini-avatar avatar-green">MA</div>
+          <div><strong>Mahnoor Ali</strong><br><small class="text-secondary">40 min ago</small></div>
+        </div>
+      </div>
+
+      <div class="card soft-card p-4">
+        <h5 class="section-title">People You May Know</h5>
+        <p class="small text-secondary">Students and professionals in your network.</p>
+        <div class="d-flex align-items-center gap-3 my-3">
+          <div class="mini-avatar avatar-brown">SA</div>
+          <div class="flex-grow-1"><strong>Saad Ahmed</strong><br><small class="text-secondary">Graphic Designer · Islamabad</small></div>
+          <button class="btn btn-soft btn-sm" onclick="sendInvite(this,'Saad Ahmed',false)">Invite</button>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="mini-avatar avatar-plum">SF</div>
+          <div class="flex-grow-1"><strong>Sara Fatima</strong><br><small class="text-secondary">CS Student · Rawalpindi</small></div>
+          <button class="btn btn-soft btn-sm" onclick="sendInvite(this,'Sara Fatima',true)">Invite</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

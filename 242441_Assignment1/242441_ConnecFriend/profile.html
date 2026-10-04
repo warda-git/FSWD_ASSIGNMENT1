@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnecFriend | Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{background:#f7f5f6;font-family:Arial,sans-serif;color:#2f2b30}
+    .topbar{background:#fff;border-bottom:1px solid #e8e2e5}.brand{color:#6d4c63;font-weight:800}.brand-mark{background:#6d4c63;color:#fff;border-radius:10px;padding:6px 9px;font-size:.8rem;margin-right:7px}
+    .soft-card{border:1px solid #ece7e9;border-radius:18px;box-shadow:0 6px 18px rgba(40,30,40,.06)}
+    .profile-cover{height:165px;background:linear-gradient(135deg,#82657a,#b58e9e)}
+    .profile-pic{width:125px;height:125px;border-radius:50%;object-fit:cover;border:6px solid #fff;margin-top:-62px}
+    .tag{background:#eee7eb;color:#68485e;border-radius:18px;padding:7px 12px;font-size:.84rem}
+    .friend-pic{width:56px;height:56px;border-radius:50%;object-fit:cover}
+    .btn-soft{background:#eee7eb;color:#6d4c63;border:none;border-radius:10px}
+  </style>
+</head>
+<body>
+<nav class="navbar topbar py-3"><div class="container"><a class="navbar-brand brand" href="home.html"><span class="brand-mark">CF</span>ConnecFriend</a><div class="d-flex gap-2"><a class="btn btn-light" href="home.html">Home</a><a class="btn btn-light" href="messages.html">Messages</a></div></div></nav>
+<main class="container py-4">
+  <div class="card soft-card overflow-hidden mb-4">
+    <div class="profile-cover"></div>
+    <div class="text-center px-4 pb-4">
+      <img class="profile-pic" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Warda">
+      <h2 class="fw-bold mt-3 mb-1">Warda</h2>
+      <p class="text-secondary">Computer Science Student · Islamabad</p>
+      <div class="d-flex justify-content-center flex-wrap gap-2"><span class="tag">Web Design</span><span class="tag">Photography</span><span class="tag">Reading</span><span class="tag">Technology</span></div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="card soft-card p-4 h-100">
+        <h5 class="fw-bold">Personal Information</h5>
+        <hr>
+        <p><strong>Email:</strong><br><span class="text-secondary">warda@example.com</span></p>
+        <p><strong>City:</strong><br><span class="text-secondary">Islamabad, Pakistan</span></p>
+        <p><strong>Education:</strong><br><span class="text-secondary">BS Computer Science</span></p>
+        <p><strong>Bio:</strong><br><span class="text-secondary">Interested in technology, design and learning new things.</span></p>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="card soft-card p-4">
+        <h5 class="fw-bold">My Friends <span class="badge text-bg-light">3</span></h5>
+        <div class="d-flex align-items-center gap-3 py-3 border-bottom">
+          <img class="friend-pic" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Hira Noor"><div class="flex-grow-1"><strong>Hira Noor</strong><br><small class="text-secondary">UI Designer</small></div><a href="messages.html" class="btn btn-soft btn-sm">Message</a>
+        </div>
+        <div class="d-flex align-items-center gap-3 py-3 border-bottom">
+          <img class="friend-pic" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Daniyal Khan"><div class="flex-grow-1"><strong>Daniyal Khan</strong><br><small class="text-secondary">Developer</small></div><a href="messages.html" class="btn btn-soft btn-sm">Message</a>
+        </div>
+        <div class="d-flex align-items-center gap-3 py-3">
+          <img class="friend-pic" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mahnoor Ali"><div class="flex-grow-1"><strong>Mahnoor Ali</strong><br><small class="text-secondary">Content Creator</small></div><a href="messages.html" class="btn btn-soft btn-sm">Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
